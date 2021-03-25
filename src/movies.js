@@ -10,12 +10,33 @@ function getAllDirectors(moviesArr){
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 function howManyMovies(moviesArr){
+    if(moviesArr == 0){
+      count = 0
+    }
+
     
+     
     let filtered = moviesArr.filter(elem =>{
-        
+      return elem.director == "Steven Spielberg"          
+    })
+    let filteredDirector = filtered.map(elem =>{
+      
+      if(elem.director !== "Steven Spielberg"){
+        count = 0
+      }else{
+        count = 2
+    }
+
+
+  
+    
     })
 
+    return count
+  
+    
 }
+
 
 // Iteration 3: All rates average - Get the average of all rates with 2 decimals
 
