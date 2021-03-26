@@ -43,7 +43,25 @@ function ratesAverage(moviesArr){
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
 function dramaMoviesRate(moviesArr) {
-    
+
+  let dramas = moviesArr.filter(elem=>{
+    return elem.genre.includes("Drama")
+  })
+  let total = dramas.reduce((acc, elem) => {
+    if (elem.rate) {
+       return acc + Number(elem.rate || 0)
+    }
+    else {
+      return acc
+    }
+  }, 0)
+  
+ 
+ let average = total != 0 ? total/dramas.length : 0
+ 
+ 
+ return  Math.round(average*100)/100
+
 }
 
 
